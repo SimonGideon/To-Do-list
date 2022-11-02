@@ -1,10 +1,10 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
 
 .todo-list {
-  margin: 10rem 5rem;
+  margin: 10rem 20rem;
   border: 1px solid gray;
   border-radius: 10px;
 }
@@ -44,11 +44,6 @@
   padding: 1rem;
   background-color: rgba(226, 217, 217, 0.952);
 }
-.input,
-.toDo-item{
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
 
 .btn {
   outline: none;
@@ -57,9 +52,10 @@
   font-size: 0.8rem;
 }
 
-.btn, .reload, .enter-input {
+.btn,
+.reload,
+.enter-input {
   cursor: pointer;
-
 }
 
 .todo-input {
