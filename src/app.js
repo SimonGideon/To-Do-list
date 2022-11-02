@@ -1,6 +1,7 @@
 import toDos from './models/components.js';
 // import styels
 import './styles/styles.css';
+
 const body = document.querySelector('body');
 const todoList = document.createElement('div');
 todoList.classList.add('todo-list');
