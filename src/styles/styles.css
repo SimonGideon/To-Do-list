@@ -6,11 +6,11 @@
 .todo-list {
   margin: 10rem 5rem;
   border: 1px solid gray;
-  padding: 2rem;
   border-radius: 10px;
 }
 
-.todo-title {
+.todo-title,
+.input {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,14 +24,41 @@
   font-size: 150%;
 }
 
-.todo-title,
 .input,
 .toDo-item {
   border-bottom: 1px solid grey;
+  padding: 2rem 1rem;
 }
 
+.todo-title {
+  border-bottom: 3px solid grey;
+}
+
+.button {
+  border-top: 3px solid grey;
+  text-align: center;
+}
+
+.button,
+.todo-title {
+  padding: 1rem;
+  background-color: rgba(226, 217, 217, 0.952);
+}
 .input,
 .toDo-item{
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.todo-input {
+  width: 50%;
+  border: none;
+  ;
 }

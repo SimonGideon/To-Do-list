@@ -5,10 +5,11 @@ const toDosDiv = document.getElementById('to-do-list-item');
 let toDosItems = (myToDos) => {
   return `
     <div class="toDo-item">
-    <span>
-        <ul>${myToDos.description}</ul>
-        <ul>${myToDos.completed}</ul>
-    </span>
+    <ul>
+        <input type="checkbox">
+        <span>${myToDos.description}</span>
+        
+    </ul>
     </div>
     `;
 }
