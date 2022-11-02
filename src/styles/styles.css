@@ -54,11 +54,19 @@
   outline: none;
   border: none;
   background-color: transparent;
+  font-size: 0.8rem;
+}
+
+.btn, .reload, .enter-input {
   cursor: pointer;
+
 }
 
 .todo-input {
   width: 50%;
+  border: white;
+}
+
+.todo-input:active {
   border: none;
-  ;
 }
