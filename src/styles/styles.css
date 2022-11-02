@@ -1,3 +1,68 @@
-body {
-  background: green;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list {
+  margin: 10rem 20rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.todo-title,
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-title h1 {
+  font-size: 22px;
+}
+
+.reload {
+  font-size: 150%;
+}
+
+.input,
+.toDo-item {
+  border-bottom: 1px solid grey;
+  padding: 20px 20px;
+}
+
+.todo-title {
+  border-bottom: 3px solid grey;
+}
+
+.button {
+  border-top: 3px solid grey;
+  text-align: center;
+}
+
+.button,
+.todo-title {
+  padding: 1rem;
+  background-color: rgba(226, 217, 217, 0.952);
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 0.8rem;
+}
+
+.btn,
+.reload,
+.enter-input {
+  cursor: pointer;
+}
+
+.todo-input {
+  width: 50%;
+  border: white;
+}
+
+.todo-input:active {
+  border: none;
 }
