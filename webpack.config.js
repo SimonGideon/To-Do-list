@@ -7,6 +7,8 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   devServer: {
     static: './dist',
@@ -15,7 +17,8 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Weibeans is awesome',
+      title: 'To Do list',
+      template: './src/index.html',
     }),
   ],
 
