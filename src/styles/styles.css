@@ -16,6 +16,10 @@
   justify-content: space-between;
 }
 
+.todo-title h1 {
+  font-size: 22px;
+}
+
 .reload {
   font-size: 150%;
 }
@@ -28,6 +32,6 @@
 
 .input,
 .toDo-item{
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

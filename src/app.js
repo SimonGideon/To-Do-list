@@ -6,9 +6,8 @@ let toDosItems = (myToDos) => {
   return `
     <div class="toDo-item">
     <span>
-        <input type="text" placeholder="${myToDos.description}">
-        <p class="speaker-name">${myToDos.description}</p>
-        <p class="speaker-profession">${myToDos.completed}</p>
+        <ul>${myToDos.description}</ul>
+        <ul>${myToDos.completed}</ul>
     </span>
     </div>
     `;
