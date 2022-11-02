@@ -1,0 +1,33 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list {
+  margin: 10rem 5rem;
+  border: 1px solid gray;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.todo-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reload {
+  font-size: 150%;
+}
+
+.todo-title,
+.input,
+.toDo-item {
+  border-bottom: 1px solid grey;
+}
+
+.input,
+.toDo-item{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
