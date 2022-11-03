@@ -1,7 +1,7 @@
 // import styels
 import './styles/styles.css';
 // import files
-import {addTask, editTask} from './models/components.js';
+import { addTask, editTask } from './models/components.js';
 import deleteTask from './models/delete.js';
 
 const form = document.getElementById('add-to-list');
@@ -18,7 +18,7 @@ const displayTask = (task) => {
     </div>
     <div class="actions">
       <i class="fa-solid fa-pen-to-square edit"></i>
-      <i class="fa-solid fa-trash-can del"></i>
+      <i class="fa-solid fa-trash del"></i>
     </div>
   </li>`;
   listItems.insertAdjacentHTML('beforeend', listItem);
@@ -36,7 +36,7 @@ listItems.addEventListener('click', (e) => {
   if (e.target.classList.contains('del')) {
     deleteTask(task, e.target);
   }
-//   target element to be edited first
+  //   target element to be edited first
   if (e.target.classList.contains('edit')) {
     editTask(task);
   }
@@ -48,3 +48,5 @@ form.addEventListener('submit', (e) => {
   addTask(task.value);
   task.value = '';
 });
+
+export { taskArr, displayTask };

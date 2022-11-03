@@ -1,3 +1,4 @@
+import { taskArr, displayTask } from '../app.js';
 // function for adding task to list
 const addTask = (task) => {
   const taskObj = {};
@@ -19,4 +20,4 @@ const editTask = (task) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export {addTask, editTask}
+export { addTask, editTask };
