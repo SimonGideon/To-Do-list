@@ -1,15 +1,14 @@
 // import styels
 import './styles/styles.css';
 // import files
-import {addTask, deleteTask, editTask} from './models/components.js'
+import {addTask, editTask} from './models/components.js';
+import deleteTask from './models/delete.js';
 
 const form = document.getElementById('add-to-list');
 const listItems = document.getElementById('to-do-list');
 
-// array for storing objects of to-do tasks
 const taskArr = [];
 
-// function for display added task to list
 const displayTask = (task) => {
   const listItem = `
   <li>
@@ -37,7 +36,7 @@ listItems.addEventListener('click', (e) => {
   if (e.target.classList.contains('del')) {
     deleteTask(task, e.target);
   }
-  // task will be edited when first the input field of task is updated and then edit icon is clicked
+//   target element to be edited first
   if (e.target.classList.contains('edit')) {
     editTask(task);
   }

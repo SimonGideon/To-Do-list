@@ -9,19 +9,6 @@ const addTask = (task) => {
   localStorage.setItem('tasks', JSON.stringify(taskArr));
 };
 
-// drop todos
-const deleteTask = (task, element) => {
-  const taskName = task.children[0].children[1].value;
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
-  const taskIndex = tasks.findIndex((x) => x.description === taskName);
-  tasks.splice(taskIndex, 1);
-  tasks.forEach((item, ind) => {
-    item.index = ind + 1;
-  });
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-  element.parentElement.parentElement.remove();
-};
-
 // editing todos
 const editTask = (task) => {
   const taskItem = task.children[0].children[1].name;
@@ -32,4 +19,4 @@ const editTask = (task) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export {addTask, deleteTask, editTask}
+export {addTask, editTask}
