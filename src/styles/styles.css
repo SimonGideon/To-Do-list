@@ -68,3 +68,7 @@
 .todo-input:active {
   border: none;
 }
+
+#span{
+  float: right;
+}
