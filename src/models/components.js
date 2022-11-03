@@ -1,4 +1,20 @@
-import { taskArr, displayTask } from '../app.js';
+const listItems = document.getElementById('to-do-list');
+const taskArr = [];
+const displayTask = (task) => {
+  const listItem = `
+  <li>
+    <div class="check">
+      <input type="checkbox" name="${task.description}">
+      <input type="text" class="task-description" name="${task.description}" class="task-name" id="task-name" value="${task.description}">
+    </div>
+    <div class="actions">
+      <i class="fa-solid fa-pen-to-square edit"></i>
+      <i class="fa-solid fa-trash del"></i>
+    </div>
+  </li>`;
+  listItems.insertAdjacentHTML('beforeend', listItem);
+};
+
 // function for adding task to list
 const addTask = (task) => {
   const taskObj = {};
@@ -20,4 +36,6 @@ const editTask = (task) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export { addTask, editTask };
+export {
+  addTask, editTask, displayTask, listItems,
+};

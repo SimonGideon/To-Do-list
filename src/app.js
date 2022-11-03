@@ -1,28 +1,13 @@
-// import styels
+// import styless
 import './styles/styles.css';
 // import files
-import { addTask, editTask } from './models/components.js';
+import {
+  addTask, editTask, displayTask, listItems,
+} from './models/components.js';
+
 import deleteTask from './models/delete.js';
 
 const form = document.getElementById('add-to-list');
-const listItems = document.getElementById('to-do-list');
-
-const taskArr = [];
-
-const displayTask = (task) => {
-  const listItem = `
-  <li>
-    <div class="check">
-      <input type="checkbox" name="${task.description}">
-      <input type="text" class="task-description" name="${task.description}" class="task-name" id="task-name" value="${task.description}">
-    </div>
-    <div class="actions">
-      <i class="fa-solid fa-pen-to-square edit"></i>
-      <i class="fa-solid fa-trash del"></i>
-    </div>
-  </li>`;
-  listItems.insertAdjacentHTML('beforeend', listItem);
-};
 
 // displaying tasks on window loading
 window.addEventListener('DOMContentLoaded', () => {
@@ -48,5 +33,3 @@ form.addEventListener('submit', (e) => {
   addTask(task.value);
   task.value = '';
 });
-
-export { taskArr, displayTask };
