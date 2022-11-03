@@ -1,54 +1,35 @@
-import {display, toDosDiv} from '../app.js';
-const toDoItem = document.getElementById('todo-input'); 
-const form = document.getElementById('form');
-const toDos = [];
+// function for adding task to list
+const addTask = (task) => {
+  const taskObj = {};
+  taskObj.index = taskArr.length + 1;
+  taskObj.description = task;
+  taskObj.completed = false;
+  displayTask(taskObj);
+  taskArr.push(taskObj);
+  localStorage.setItem('tasks', JSON.stringify(taskArr));
+};
 
-// display the list form local storage on reloading
-window.addEventListener('DOMContentLoaded', ()=>{
-  if (localStorage.getItem('toDos') !== null) {
-    const getbook = JSON.parse(localStorage.getItem('toDos'));
-  
-    getbook.forEach((myToDos) => {
-      toDosDiv.innerHTML +=  `
-      <div class="toDo-item">
-      <ul>
-          <input type="checkbox" id="checkingIn">
-          <span>${myToDos.description}</span>
-          <span id="actions">
-            <i id="span" class="fa-solid fa-pen-to-square edit"></i>
-            <i id="span" class="fa-solid fa-trash-can del"></i>
-        </span>
-      </ul>
-      </div>
-      `;
-    });
-  }
+// drop todos
+const deleteTask = (task, element) => {
+  const taskName = task.children[0].children[1].value;
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  const taskIndex = tasks.findIndex((x) => x.description === taskName);
+  tasks.splice(taskIndex, 1);
+  tasks.forEach((item, ind) => {
+    item.index = ind + 1;
+  });
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  element.parentElement.parentElement.remove();
+};
 
-})
+// editing todos
+const editTask = (task) => {
+  const taskItem = task.children[0].children[1].name;
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  const taskIndex = tasks.findIndex((x) => x.description === taskItem);
+  const taskName = task.querySelector('#task-name').value;
+  tasks[taskIndex].description = taskName;
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
 
-// add function into an array
-const add = () => {
-  const toDoitem = {
-    description: document.getElementById('todo-input').value,
-    completed: false,
-    index: toDos.length + 1,
-  };
-  if (toDoItem.value != '') {
-    toDos.push(toDoitem);
-    // storing the new array in local storage
-    localStorage.setItem('toDos', JSON.stringify(toDos));
-    display();
-  } else {
-    return 1;
-  }
-}
-
-
-form.addEventListener('click', (e)=>{
-  e.preventDefault();
-  add();
-  form.reset();
-  console.log(toDos);
-})
-
-export default toDos;
+export {addTask, deleteTask, editTask}
