@@ -1,4 +1,5 @@
 // drop todos
+// deleting task
 const deleteTask = (task, element) => {
   const taskName = task.children[0].children[1].value;
   const tasks = JSON.parse(localStorage.getItem('tasks'));
