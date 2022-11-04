@@ -15,12 +15,6 @@ const displayTask = (task) => {
   listItems.insertAdjacentHTML('beforeend', listItem);
 };
 
-// displaying tasks on window loading
-window.addEventListener('DOMContentLoaded', () => {
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
-  tasks.forEach((task) => displayTask(task));
-});
-
 // function for adding task to list
 const addTask = (task) => {
   const taskObj = {
@@ -43,6 +37,12 @@ const editTask = (task) => {
   tasks[taskIndex].description = taskName;
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
+
+// displaying tasks on window loading
+window.addEventListener('DOMContentLoaded', () => {
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  tasks.forEach((task) => displayTask(task));
+});
 
 export {
   addTask, editTask, displayTask, listItems,
