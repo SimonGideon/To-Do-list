@@ -1,49 +1,66 @@
 const listItems = document.getElementById('to-do-list');
 const taskArr = [];
+
+// display task
 const displayTask = (task) => {
   const listItem = `
   <li>
     <div class="check">
-      <input type="checkbox" name="${task.description}">
+      <input type="checkbox" name="checkbox" class="checkbox" id="${task.description}">
       <input type="text" class="task-description" name="${task.description}" class="task-name" id="task-name" value="${task.description}">
     </div>
     <div class="actions">
       <i class="fa-solid fa-pen-to-square edit"></i>
-      <i class="fa-solid fa-trash del"></i>
+      <i class="fa-solid fa-trash-can del"></i>
     </div>
   </li>`;
-  listItems.insertAdjacentHTML('beforeend', listItem);
+  return listItem;
 };
 
-// function for adding task to list
-const addTask = (task) => {
-  const taskObj = {
-    index: taskArr.length + 1,
-    description: task,
-    completed: false,
-  };
+// hold items on window onload
+window.addEventListener('DOMContentLoaded', () => {
+  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  // displaying tasks on window loading
+  tasks.forEach((task) => {
+    const listItem = displayTask(task);
+    listItems.insertAdjacentHTML('beforeend', listItem);
+  });
+  // setting checkbox value to checked on window refresh if status is completed
+  const completedTasksIndex = tasks.filter((task) => task.completed === true);
+  for (let i = 0; i < completedTasksIndex.length; i += 1) {
+    for (let j = 0; j < (listItems.children).length; j += 1) {
+      if (j === (completedTasksIndex[i].index - 1)) {
+        listItems.children[j].children[0].children[0].checked = true;
+      }
+    }
+  }
+});
 
-  displayTask(taskObj);
+// adding taks
+const addTask = (task) => {
+  const taskObj = {};
+  taskObj.index = taskArr.length + 1;
+  taskObj.description = task;
+  taskObj.completed = false;
+  const listItem = displayTask(taskObj);
+  listItems.insertAdjacentHTML('beforeend', listItem);
   taskArr.push(taskObj);
   localStorage.setItem('tasks', JSON.stringify(taskArr));
 };
 
-// editing todos
-const editTask = (task) => {
-  const taskItem = task.children[0].children[1].name;
+// deleting task
+const deleteTask = (task, element) => {
+  const taskName = task.children[0].children[1].value;
   const tasks = JSON.parse(localStorage.getItem('tasks'));
-  const taskIndex = tasks.findIndex((x) => x.description === taskItem);
-  const taskName = task.querySelector('#task-name').value;
-  tasks[taskIndex].description = taskName;
+  const taskIndex = tasks.findIndex((x) => x.description === taskName);
+  tasks.splice(taskIndex, 1);
+  tasks.forEach((item, ind) => {
+    item.index = ind + 1;
+  });
   localStorage.setItem('tasks', JSON.stringify(tasks));
+  element.parentElement.parentElement.remove();
 };
 
-// displaying tasks on window loading
-window.addEventListener('DOMContentLoaded', () => {
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
-  tasks.forEach((task) => displayTask(task));
-});
-
 export {
-  addTask, editTask, displayTask, listItems,
+  displayTask, addTask, deleteTask, listItems, taskArr,
 };
