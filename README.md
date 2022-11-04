@@ -17,7 +17,7 @@
 
 ## Getting Started
 ### ⚠️⚠️ Note the commands for running the server⚠️⚠️
-> `npm run dev`
+> `npm run start`
 ## **Setting up this project locally**
 > ## How should it be tested
 > Clone the repository
