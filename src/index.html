@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAc/8AAAAAAABaxwAAX9QA////AABl4AAAbPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAEEUAAAAACIkERQiIgACIkEREUIiIDM0FEQRQzMzMzNDM0EUMzNVVVVVVBRVVVVVVVVVQUVVZmZmZmZkFGZmZmZmZmZGZgAAAAAAAAAAEAAAAAAAAAGAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAA" rel="icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <title>To Do List</title>
 </head>
 <body>
-    <div class="todo-list">
-        <div class="todo-title">
-            <h1>Today's To Do</h1>
-            <span class=reload>&#x21bb;</span>
-        </div>
-          <ul class="input">
-            <input type="text" class="todo-input" placeholder="Add to your list">
-            <span class="enter-input">&#x2714;</span>
-          </ul>
-          <div id="to-do-list-item">
-          </div>
-          <div class="todo-list-items"></div>
-          <div class="button">
-            <button type="reset" class="btn">Clear all completed</button>
-          </div>
+    <div class="to-do-box">
+        <div class="todays-to-do"><p>Today's To Do</p><i class="fa-solid fa-arrows-rotate"></i></div>
+        <form class="add-to-list" id="add-to-list">
+            <input type="text" name="task" id="task" placeholder="Add to list..." required>
+            <button type="submit" class="btn-add-task">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </form>
+        <ul id="to-do-list" class="to-do-list">
+        </ul>
+        <button class="btn-clear">Clear all completed</button>
     </div>
 </body>
+</html>
 </html>

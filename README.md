@@ -16,8 +16,9 @@
 ## ✈️ [Launch]()
 
 ## Getting Started
-
-**Setting up this project locally**
+### ⚠️⚠️ Note the commands for running the server⚠️⚠️
+> `npm run start`
+## **Setting up this project locally**
 > ## How should it be tested
 > Clone the repository
 > 

@@ -1,74 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Poppins&family=Roboto&display=swap');
+
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.todo-list {
-  margin: auto;
-  margin-top: 10rem;
-  width: 50%;
-  border: 1px solid gray;
-  border-radius: 10px;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(250, 244, 244);
 }
 
-.todo-title,
-.input {
+.to-do-box {
+  width: 40%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.todays-to-do {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-to-list {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-to-list input {
+  font-style: italic;
+  width: 80%;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.btn-clear {
+  display: block;
+  margin-top: auto;
+  border: 1px solid #ccc;
+  padding: 15px 0;
+  color: rgb(138, 133, 133);
+  font-size: 1rem;
+}
+
+.btn-add-task {
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.to-do-list {
+  list-style-type: none;
+}
+
+.to-do-list li {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.todo-title h1 {
-  font-size: 22px;
-}
-
-.reload {
-  font-size: 150%;
-}
-
-.input,
-.toDo-item {
-  border-bottom: 1px solid grey;
-  padding: 20px 20px;
-}
-
-.todo-title {
-  border-bottom: 3px solid grey;
-}
-
-.button {
-  border-top: 3px solid grey;
-  text-align: center;
-}
-
-.button,
-.todo-title {
-  padding: 1rem;
-  background-color: rgba(226, 217, 217, 0.952);
-}
-
-.btn {
+.task-description {
+  border: none;
   outline: none;
-  border: none;
-  background-color: transparent;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
-.btn,
-.reload,
-.enter-input {
+.check,
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.edit,
+.del {
   cursor: pointer;
-}
-
-.todo-input {
-  width: 50%;
-  border: white;
-}
-
-.todo-input:active {
-  border: none;
-}
-
-#span{
-  float: right;
 }
