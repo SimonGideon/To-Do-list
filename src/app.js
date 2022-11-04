@@ -9,12 +9,6 @@ import deleteTask from './models/delete.js';
 
 const form = document.getElementById('add-to-list');
 
-// displaying tasks on window loading
-window.addEventListener('DOMContentLoaded', () => {
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
-  tasks.forEach((task) => displayTask(task));
-});
-
 // Element target for task deletion and updation
 listItems.addEventListener('click', (e) => {
   const task = e.target.parentElement.parentElement;
