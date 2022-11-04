@@ -1,4 +1,5 @@
 import deleteTask from './delete.js';
+
 const listItems = document.getElementById('to-do-list');
 const taskArr = [];
 
