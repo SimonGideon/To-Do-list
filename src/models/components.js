@@ -28,7 +28,7 @@ const addTask = (task) => {
     description: task,
     completed: false,
   };
-  
+
   displayTask(taskObj);
   taskArr.push(taskObj);
   localStorage.setItem('tasks', JSON.stringify(taskArr));

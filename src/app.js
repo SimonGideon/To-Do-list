@@ -2,7 +2,7 @@
 import './styles/styles.css';
 // import files
 import {
-  addTask, editTask, displayTask, listItems,
+  addTask, editTask, listItems,
 } from './models/components.js';
 
 import deleteTask from './models/delete.js';
