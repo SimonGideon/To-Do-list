@@ -45,7 +45,7 @@ const addTask = (task) => {
   taskObj.description = task;
   taskObj.completed = false;
   const listItem = displayTask(taskObj);
-  listItems.insertAdjacentHTML('beforeend', listItem);
+  document.querySelector('#to-do-list').insertAdjacentHTML('beforeend', listItem);
   taskArr.push(taskObj);
   localStorage.setItem('tasks', JSON.stringify(taskArr));
 };
