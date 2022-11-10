@@ -7,6 +7,9 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production"
   },
+  "jest": {
+    "verbose": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SimonGideon/webpack.git"
@@ -43,7 +46,8 @@
     "webpack-plugin": "^1.0.5"
   },
   "dependencies": {
-    "babe": "^0.0.1"
+    "babe": "^0.0.1",
+    "jest-environment-jsdom": "^29.3.1"
   },
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet) <img src=\"https://webpack.js.org/site-logo.1fcab817090e78435061.svg\"  width=80>"
 }
