@@ -1,4 +1,7 @@
-import { addTask, taskArr } from './src/models/util';
+/**
+ * @jest-environment jsdom
+ */
+import { addTask, taskArr } from './src/models/components';
 
 test('New item added', () => {
   addTask({
